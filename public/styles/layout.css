@@ -14,11 +14,25 @@ html {
  * Global layout stuff
  */
 
-body {
+ body {
+  display: flex;
   color: #545149;
+  font-family: 'Source Sans Pro', sans-serif;
   background-color: #f4f1ec;
   font-size: 24px;
+  flex-direction: column;
 }
+.container{
+  display: flex;
+  font-family: 'Bungee', cursive;
+  justify-content: center;
+  width: 100%;
+  background-color: #d3fcfc;
+  background-image: url("https://www.transparenttextures.com/patterns/rough-cloth-light.png");
+  color: black;
+}
+
+
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions

@@ -1,0 +1,36 @@
+.tweet-container {
+  margin: 1em;
+  border: solid;
+  padding: .857em;
+  background-color: lightblue;
+}
+
+.header {
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-between;
+
+}
+
+.name-image {
+  display: flex;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.icons {
+  display: flex;
+}
+
+.image {
+  max-width: 70%;
+  height: 70%;
+}
+
+.seperator {
+  background-color: black;
+}
