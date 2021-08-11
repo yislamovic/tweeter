@@ -12,9 +12,7 @@ const determineDate = function (date) {
 $(document).ready(function () {
   $.ajax('/tweets', { method: "GET", dataType: "json" })
     .then(result => {
-
       for (let user of result) {
-        console.log(user);
         $('.contains-tweets').append(
           `
           <article class="tweet-container">
@@ -41,7 +39,6 @@ $(document).ready(function () {
           `
         )
       }
-
     })
     .catch(error => {
       console.log(error);

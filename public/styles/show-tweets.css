@@ -1,3 +1,7 @@
+.tweet-shadow {
+  background-color: black;
+}
+
 .tweet-container {
   margin: 1em;
   border: solid;
