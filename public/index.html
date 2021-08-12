@@ -28,6 +28,7 @@
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
@@ -52,7 +53,7 @@
       </div>
       <br>
       <div>
-        <h2>Yahya Islamovic</h2>
+        <h2 id="name">Yahya Islamovic</h2>
       </div>
     </header>
   </div>
@@ -67,12 +68,13 @@
         <textarea name="text" id="tweet-text"></textarea>
         <div id="button-counter">
           <button id="button" type="submit">Tweet</button>
-          <output id="counter" name="counter" class="counter" for="tweet-text">140</output>
+          <output id="counter" name="counter" class="counter" for="tweet-text">Max chars 140</output>
         </div>
       </form>
     </section>
   </main>
   <section class="contains-tweets">
+  <div></div>
   </section>
 </body>
 

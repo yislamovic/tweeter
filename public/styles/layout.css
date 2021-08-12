@@ -31,6 +31,11 @@ html {
   background-image: url("https://www.transparenttextures.com/patterns/rough-cloth-light.png");
   color: black;
 }
+#error {
+  display: flex;
+  justify-content: center;
+  color: red;
+}
 
 
 

@@ -1,7 +1,3 @@
-.tweet-shadow {
-  background-color: black;
-}
-
 .tweet-container {
   margin: 1em;
   border: solid;
@@ -9,11 +5,14 @@
   background-color: lightblue;
 }
 
+.tweet-shadow {
+  box-shadow: 10px 5px 5px gray;
+}
+
 .header {
   display: flex;
   flex-direction: row; 
   justify-content: space-between;
-
 }
 
 .name-image {
@@ -25,7 +24,9 @@
   flex-direction: row;
   justify-content: space-between;
 }
-
+.flag {
+  color: blue;
+}
 .icons {
   display: flex;
 }
@@ -33,6 +34,11 @@
 .image {
   max-width: 70%;
   height: 70%;
+}
+
+.user-image {
+  max-width: 35%;
+  height: 35%;
 }
 
 .seperator {
