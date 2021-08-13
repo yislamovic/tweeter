@@ -3,18 +3,17 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-const determineDate = function (date) {
+const determineDate = function (date) {// function that gets the current date and date from database and returns the time since posted
   const date1 = new Date(date);
   const date2 = new Date();
   const diffTime = Math.abs(date2 - date1);
   const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-  console.log(diffTime + " milliseconds");
-  console.log(diffDays + " days");
   return diffDays;
 }
 
-const createTweet = function (obj, now) {
-  $('.contains-tweets').prepend(
+const createTweet = function (obj, now) {//function that determines the structure of the tweet that will be appened to the html dynamically
+    //paramaters are the object and a boolean; boolean is for determining if the tweet is posted now or already in the db
+  $('.contains-tweets').prepend(       
     `
     <article class="tweet-container">
       <div class="header">
@@ -27,7 +26,7 @@ const createTweet = function (obj, now) {
       <p3>${obj.content.text}</p3>
       <hr class="seperator"></hr>
       <div class="footer">
-        <div>
+        <div>  <!-- This ternary is what determines the date either 'just now' or date in db -->
         <span>${now ? timeago.format(new Date()) : determineDate(obj.created_at) + ' days ago'} </span>
         </div>
         <div class="icons">
@@ -41,12 +40,12 @@ const createTweet = function (obj, now) {
   )
 }
 
-const renderTweets = function () {
+const renderTweets = function () {// this gets all the tweets from the database and calls createTweets() to append them to html
   $.ajax('/tweets', { method: "GET", dataType: "json" })
   .then(result => {
     for (let user of result) {
-      $('.contains-tweets').prepend(
-       createTweet(user, false)
+      $('.contains-tweets').prepend(//prepends to the contains-tweets container
+       createTweet(user, false)//calls create tweet and renders all tweets; (notice how the boolean is false?) this means it will call determineDate()
       )
     }
   })
@@ -56,16 +55,17 @@ const renderTweets = function () {
 }
 
 $(document).ready(function () {
-  renderTweets();
+  renderTweets();//renders all the tweets on documents load
   $("#form").on('submit', function (event) {
-    event.preventDefault();
+    event.preventDefault();//prevents the defualt behavour of refreshing the page on form submit
     const $textArea = document.getElementById('tweet-text');
     const tweet = $("#tweet-text").serialize();
+    //error handling; checking all requirements for a tweet before it gets posted
     if ($textArea.value.length > 140) {
-      if ($('#error').length) {
+      if ($('#error').length) {//if the error html already exist; remove it 
         const elem = document.getElementById("error");
         elem.remove();
-      }
+      }//append an error in html above the tweet container  
       $('.contains-tweets').prepend(`
       <p id="error">You have exceeded the maximum characters alloted!</p>`);
     }
@@ -77,24 +77,23 @@ $(document).ready(function () {
       $('.contains-tweets').prepend(`
       <p id="error">You didnt write anything!</p>`);
     }
+    
+    //if the conditions for tweet are met..
     if ($textArea.value && $textArea.value.length <= 140) {
       if ($('#error').length) {
         const elem = document.getElementById("error");
         elem.remove();
       }
-      $.ajax({
+      $.ajax({//post request to DB
         type: "POST",
         url: "/tweets",
-        data: tweet,
+        data: tweet,//serialized data from text area
         success: function (data) {
-          console.log("The ajax request succeeded!");
-          console.log("The result is: ");
-          console.dir(data);
+          //if POST was succesful; get the latest tweet and append it
           $.ajax('/tweets', { method: "GET", dataType: "json" })
             .then(result => {
-              const obj = result.reverse()[0];
-              console.log(result.reverse()[0]);
-              createTweet(obj, true);
+              const obj = result.reverse()[0];//reverses the object to get the most current tweet
+              createTweet(obj, true);//calls createTweet; true means the date displays 'just now'
             })
             .catch(error => {
               console.log(error);
@@ -105,6 +104,7 @@ $(document).ready(function () {
         }
       });
     }
+    $textArea.value = '';//clears the text area
   })
 });
 
