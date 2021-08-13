@@ -11,9 +11,16 @@ const determineDate = function (date) {// function that gets the current date an
   return diffDays;
 }
 
+const escape = function (str) {//escape function that escapes html and prevents scripts from bieng appened to the index.html
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 const createTweet = function (obj, now) {//function that determines the structure of the tweet that will be appened to the html dynamically
     //paramaters are the object and a boolean; boolean is for determining if the tweet is posted now or already in the db
-  $('.contains-tweets').prepend(       
+    
+    $('.contains-tweets').prepend(       
     `
     <article class="tweet-container">
       <div class="header">
@@ -23,7 +30,7 @@ const createTweet = function (obj, now) {//function that determines the structur
         </div>
         <span>${obj.user.handle}</span>
       </div>
-      <p3>${obj.content.text}</p3>
+      <p3>${escape(obj.content.text)}</p3>
       <hr class="seperator"></hr>
       <div class="footer">
         <div>  <!-- This ternary is what determines the date either 'just now' or date in db -->
