@@ -23,7 +23,7 @@ Tweeter is a simple, single-page Twitter clone.
 - body-parser 1.15.2
 - chance 1.0.2
 - express 4.13.4
-- jquery 3.6.0",
+- jquery 3.6.0,
 - md5 2.1.0",
 - timeago.js 4.0.2
 
