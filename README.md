@@ -2,8 +2,6 @@
 
 Tweeter is a simple, single-page Twitter clone.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
-
 ## Getting Started
 
 1. Fork this repository, then clone your fork of this repository.
@@ -11,19 +9,12 @@ This repository is the starter code for the project: Students will fork and clon
 3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
 4. Go to <http://localhost:8080/> in your browser.
 
-
-
-# TinyApp Project
-
-Tweeter is a simple, single-page Twitter clone.
-
 ## Final Product
+!["Shows the tweeter app in full screen mode ie: desktop"](docs/wide-screen-capture.gif)
 
-!["shows the urls rendered in a URL list page"](https://github.com/yislamovic/tinyapp/blob/master/docs/URLPage.png?raw=true)
+!["Shows the tweeter app in Mobile and Tablet view"](docs/mobile-view.gif)
 
-!["shows the submit button for the long URL"](https://github.com/yislamovic/tinyapp/blob/master/docs/URLSubmission.png?raw=true)
-
-!["shows update page and the hyperlink for tinyURL"](https://github.com/yislamovic/tinyapp/blob/master/docs/newURLPage.png?raw=true)
+![Demos the tweet and icon style changes](docs/css-changes.gif)
 
 ## Dependencies
 
