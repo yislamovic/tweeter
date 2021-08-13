@@ -20,23 +20,46 @@ html {
   font-family: 'Source Sans Pro', sans-serif;
   background-color: #f4f1ec;
   font-size: 24px;
-  flex-direction: column;
+  flex-direction: row;
+  padding-top: 4em;
+  justify-content: space-around;
 }
 .container{
   display: flex;
   font-family: 'Bungee', cursive;
   justify-content: center;
   width: 100%;
-  background-color: #d3fcfc;
-  background-image: url("https://www.transparenttextures.com/patterns/rough-cloth-light.png");
   color: black;
 }
+
 #error {
   display: flex;
   justify-content: center;
   color: red;
 }
 
+#tweet-text{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid black;
+  font-family: sans-serif;
+  background-color: transparent;
+  resize: none;
+}
+
+@media only screen and (max-width: 900px){
+ body{
+   display: flex;
+   flex-direction: column;
+ }
+ .nav{
+  background-color: #d3fcfc;
+  background-image: url("https://www.transparenttextures.com/patterns/rough-cloth-light.png");
+ }
+}
 
 
 /*

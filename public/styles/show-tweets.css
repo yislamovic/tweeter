@@ -24,11 +24,10 @@
   flex-direction: row;
   justify-content: space-between;
 }
-.flag {
-  color: blue;
-}
+
 .icons {
   display: flex;
+  color: gray;
 }
 
 .image {

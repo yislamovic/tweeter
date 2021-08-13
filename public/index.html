@@ -28,13 +28,15 @@
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+    integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-  <script type="text/javascript" src="/scripts/show-tweets.js"></script>
+  <script type="text/javascript" src="/scripts/change-css.js"></script>
   <script type="text/javascript" src="/scripts/client.js"></script>
-  
+
 </head>
 
 <body>
@@ -43,39 +45,41 @@
     <span id="tweeter">tweeter</span>
     <div id="message">
       <span>Write a new tweet</span>
-      <i class="fas fa-angle-double-down"></i>
+      <button class="btn"><i class="fas fa-angle-double-down"></i></button>
     </div>
   </nav>
   <div class="header-background">
     <header class="header">
       <div>
         <img src="/images/profile-hex.png">
+        <h2 id="name">Yahya Islamovic</h2>
       </div>
       <br>
       <div>
-        <h2 id="name">Yahya Islamovic</h2>
       </div>
     </header>
   </div>
 
 
   <!-- Page-specific (main) content here -->
-  <main class="container">
-    <section class="new-tweet">
-      <h2>Compose Tweet</h2>
-      <form id="form">
-        <label for="tweet-text">What are you humming about?</label>
-        <textarea name="text" id="tweet-text"></textarea>
-        <div id="button-counter">
-          <button id="button" type="submit">Tweet</button>
-          <output id="counter" name="counter" class="counter" for="tweet-text">Max chars 140</output>
-        </div>
-      </form>
+  <div id="main-section">
+    <main class="container">
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form id="form">
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div id="button-counter">
+            <button id="button" type="submit">Tweet</button>
+            <output id="counter" name="counter" class="counter" for="tweet-text">Max chars 140</output>
+          </div>
+        </form>
+      </section>
+    </main>
+    <section class="contains-tweets">
+      <div></div>
     </section>
-  </main>
-  <section class="contains-tweets">
-  <div></div>
-  </section>
+  </div>
 </body>
 
 </html>
